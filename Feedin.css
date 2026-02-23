@@ -1,0 +1,106 @@
+Body{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("Welcome.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+
+.logo img {
+    height: 150px;
+    width: 150px;
+    margin-left: 0px;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    margin-top: 20px;
+}
+.links {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    margin-right: 50px;
+}
+.links a {
+    text-decoration: none;
+    justify-items: space-between;
+    row-gap: 40px;
+    color: white;
+    font-family: "Kablammo", system-ui;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+.links a:hover {color:#C75B12}
+
+.btn{
+    background-color: #D88A2D;
+    border: 2px solid white;
+    color: white;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 35px;
+    align-items: center;
+    border-radius: 30px;
+    font-family: "caveat brush", cursive;
+    transition: background 0.3s, color 0.3s;
+}
+.btn:hover {
+    background-color: white;
+    color: #C75B12;
+}
+.butt{
+    display: flex;
+    text-decoration: none;
+    font-family: "caveat brush", cursive;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s, color 0.3s;
+}
+.butt:hover{color:#D88A2D}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 100px;
+    font-family:'Roboto', sans-serif;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+    font-family:'Roboto', sans-serif;
+}
+
+.quote {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+    font-family:"caveat brush", cursive;
+    font-weight: bold;
+    color: #D88A2D;
+}
+
+.span {
+    color: #C75B12;
+    font-weight: bold;
+    font-family: "kablammo", system-ui;
+}
+p {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    font-family:'caveat brush', cursive;
+    color: #D88A2D;
+    font-weight: bold;
+}

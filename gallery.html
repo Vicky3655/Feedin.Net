@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedin.net</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Kablammo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  
+  <header>
+        <nav>
+          <div class="logo"><img src = "ChatGPT Image Feb 16, 2026, 01_21_09 PM.png" alt="Logo"></div>
+            <div class="links">
+             <a href="Feedin.html">HOME</a>
+             <a href="menu.html">MENU</a>
+             <a href="about.html">ABOUT</a>
+             <a href="gallery.html">GALLERY</a>
+             <a href="">CONTACT</a>
+           </div>
+        </nav>
+    <h1> Feedin Gallery</h1>
+    <p>Our Resort Layout</p>
+  </header>
+
+  
+  <div class="search-container">
+    <input type="text" class="search-box" placeholder="Search for images..." id="searchInput">
+  </div>
+
+  <div class="masonry-gallery">
+    
+    <div class="masonry-item" onclick="openModal(0)">
+      <img src="image 3.png" alt="Exotic Jollof Rice">
+      <div class="image-info">
+        <h3>Exotic Jollof Rice</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(1)">
+      <img src="image 4.png" alt="Simple Jollof rice">
+      <div class="image-info">
+        <h3>Simple Jollof rice</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(2)">
+      <img src="image 6.png" alt="Vegetable sauce">
+      <div class="image-info">
+        <h3>Vegetable sauce</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(3)">
+      <img src="image 8.png" alt="Peppered Egusi Soup">
+      <div class="image-info">
+        <h3>Peppered Egusi Soup</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(4)">
+      <img src="image 9.png" alt="Complete Chicken Jollof rice">
+      <div class="image-info">
+        <h3>Complete Chicken Jollof rice</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(5)">
+      <img src="image 10.png" alt="Chicken souced Jollof rice">
+      <div class="image-info">
+        <h3>Chicken souced Jollof rice</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(6)">
+      <img src="image 11.png" alt="Vegetable soup">
+      <div class="image-info">
+        <h3>Vegetable soup</h3>
+        <p>Sticker Available</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(7)">
+      <img src="Property 1=Default.png" alt="Flavoured Jollof rice">
+      <div class="image-info">
+        <h3>Flavoured Jollof rice</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(8)">
+      <img src="ChatGPT Image Feb 16, 2026, 01_21_09 PM.png" alt="Logo transparent">
+      <div class="image-info">
+        <h3>Logo Transparent</h3>
+        <p>Stickers Available</p>
+      </div>
+    </div>
+
+  
+    <div class="masonry-item" onclick="openModal(9)">
+      <img src="IMG_7215.jpg" alt="CEO Chime Victor">
+      <div class="image-info">
+        <h3>CEO Feedin</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(10)">
+      <img src="Property 1=Variant4.png" alt="Snacks">
+      <div class="image-info">
+        <h3>Snacks</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+
+    
+    <div class="masonry-item" onclick="openModal(11)">
+      <img src="ChatGPT Image Feb 16, 2026, 01_15_31 PM.png" alt="Logo">
+      <div class="image-info">
+        <h3>Logo</h3>
+        <p>Photography</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="modal" id="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="nav-arrow prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="nav-arrow next" onclick="changeImage(1)">&#10095;</span>
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="">
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p id="modalCategory"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      { src: 'image 3.png', title: 'Exotic Jollof rice', category: 'Photography' },
+      { src: 'image 4.png', title: 'simple Jollof rice', category: 'Photography' },
+      { src: 'image 6.png', title: 'Vegetable sauce', category: 'Photography' },
+      { src: 'image 8.png', title: 'Peppered Egusi Soup', category: 'Photography' },
+      { src: 'image 9.png', title: 'Complete Chicken Jollof rice', category: 'Photography' },
+      { src: 'image 10.png', title: 'Chicken sauced Jollof rice', category: 'Photography' },
+      { src: 'image 11.png', title: 'Vegetable Soup', category: 'Sticker Available' },
+      { src: 'Property 1=Default.png', title: 'Flavoured Jollof rice', category: 'Photography' },
+      { src: 'ChatGPT Image Feb 16, 2026, 01_21_09 PM.png', title: 'Logo Transparent', category: 'Stickers Available' },
+      { src: 'IMG_7215.jpg', title: 'CEO Feedin', category: 'Photography' },
+      { src: 'Property 1=Variant4.png', title: 'Snacks', category: 'Photography' },
+      { src: 'ChatGPT Image Feb 16, 2026, 01_15_31 PM.png', title: 'Logo', category: 'Photography' }
+    ];
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalCategory = document.getElementById('modalCategory');
+
+      modal.classList.add('show');
+      modalImg.src = images[index].src;
+      modalTitle.textContent = images[index].title;
+      modalCategory.textContent = images[index].category;
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('show');
+    }
+
+    function changeImage(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+      openModal(currentIndex);
+    }
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      const items = document.querySelectorAll('.masonry-item');
+      
+      items.forEach(item => {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const category = item.querySelector('p').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || category.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <footer class="footer">
+  <div class="footer-container">
+
+
+    <div class="footer-brand">
+      <h2>Feedin</h2>
+      <p>Authentic Flavor. Every Bite.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="Feedin.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="contact">
+      <h3>Contact</h3>
+      <p> Lagos, Nigeria</p>
+      <p>+234 800 000 0000</p>
+      <p> info@feedin.com</p>
+    </div>
+
+
+    <div class="hours">
+      <h3>Opening Hours</h3>
+      <p>Mon - Fri: 10am - 10pm</p>
+      <p>Sat - Sun: 12pm - 11pm</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Feedin. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
