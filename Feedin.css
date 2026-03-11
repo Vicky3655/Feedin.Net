@@ -170,4 +170,33 @@ p {
         line-height: 1.6;
         padding: 0 15px;
     }
+    .footer-container {
+        display: flex;
+        flex-direction: row; /* Puts tags in a row */
+        flex-wrap: wrap;     /* Allows them to move to the next line if space runs out */
+        justify-content: center;
+        align-items: center;
+        gap: 15px;           /* Space between the tags */
+        text-align: center;
+    }
+
+    /* If you have specific div blocks for the author/CEO info */
+    .footer-brand, 
+    .footer-links, 
+    .contact {
+        flex: 1 1 150px;    /* Allows items to grow/shrink, but start at 150px */
+        margin: 10px 0;
+    }
+
+    .footer-brand h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .footer-brand p {
+        font-size: 14px;
+        margin: 0;
+    }
 }
+
+
