@@ -145,9 +145,11 @@ h1 {
     }
 
     .links {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 15px;
     }
+    
 
     h1 {
         font-size: 30px; /* Scaled down from 40px */
@@ -170,3 +172,4 @@ h1 {
         text-align: center;
     }
 }
+
