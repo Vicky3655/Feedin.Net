@@ -317,6 +317,95 @@ nav {
   font-size: 13px;
 }
 
+/* Tablet and Small Laptops */
+@media (max-width: 1024px) {
+    nav {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .links {
+        margin-right: 0;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .masonry-gallery {
+        column-count: 3;
+        padding: 0 20px;
+    }
+}
+
+/* Mobile Devices (Phones) */
+@media (max-width: 768px) {
+    .logo img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .search-container {
+        width: 90%;
+    }
+
+    /* Adjusting Masonry for Mobile */
+    .masonry-gallery {
+        column-count: 1; /* Single column looks much better on phones */
+        padding: 0 15px;
+    }
+
+    /* Modal Scaling for Mobile */
+    .modal-content {
+        width: 95%;
+    }
+
+    .modal-content img {
+        height: auto; /* Prevent stretching */
+        max-height: 60vh;
+    }
+
+    .modal-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .nav-arrow {
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack footer sections */
+        text-align: center;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .masonry-gallery {
+        column-count: 1;
+    }
+    
+    .close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+}
+
+
 
 
 
