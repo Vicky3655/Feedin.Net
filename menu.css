@@ -189,6 +189,71 @@ li {
   font-size: 13px;
 }
 
+/* Tablet and Small Laptops */
+@media (max-width: 1240px) {
+    .one {
+        gap: 40px; /* Reduced from 200px */
+        padding: 0 20px;
+    }
+
+    .container1, .container2, .container3, .container4 {
+        width: 45%; /* Allow two side-by-side but smaller */
+    }
+
+    .links {
+        gap: 30px; /* Reduced from 100px */
+        margin-right: 5%;
+    }
+}
+
+/* Mobile Devices (Phones) */
+@media (max-width: 768px) {
+    nav {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .logo img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 15px;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    /* Force menu items to stack vertically */
+    .one {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .container1, .container2, .container3, .container4 {
+        width: 90%; /* Take up most of the screen width */
+        margin-top: 20px !important; /* Overriding the 100px top margins */
+    }
+
+    .container4 img {
+        height: auto; /* Fix for the fixed 350px height drink image */
+    }
+
+    h1 {
+        font-size: 24px; /* Scaled down for mobile headers */
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+
 
 
 
