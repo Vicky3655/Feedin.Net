@@ -137,6 +137,7 @@ p {
     .logo img {
         height: 100px; /* Scaling down the 150px logo */
         width: 100px;
+        margin-right: 60%;
     }
 
     .links {
