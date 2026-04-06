@@ -1,0 +1,161 @@
+Body{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("Welcome.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh
+}
+
+.logo img {
+    height: 150px;
+    width: 150px;
+    margin-left: 0px;
+    top: 0;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* 2. THE MAIN CONTAINER */
+.container {
+    width: 100%;
+    max-width: 450px; /* Limits width on desktop */
+    display: flex;
+    justify-content: center;
+}
+
+.first {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* The blur effect from your screenshot */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* 3. LOGO & HEADER */
+.quest .logo1 img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.Log {
+    color: white;
+    font-size: 28px;
+    font-family: 'kablammo', system-ui;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* 4. FORM ELEMENTS */
+form {
+    text-align: left;
+}
+
+.email {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+input[type="email"], 
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #C75B12;
+}
+
+/* 5. BUTTONS & LINKS */
+.forgot {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    text-align: right;
+    cursor: pointer;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.sign {
+    width: 100%;
+    padding: 15px;
+    background: #D88A2D;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.sign:hover {
+    background: #C75B12;
+    transform: translateY(-2px);
+}
+
+.sign:active {
+    transform: scale(0.98);
+}
+
+.h3 {
+    color: white;
+    font-size: 14px;
+    margin-top: 25px;
+    font-weight: 400;
+}
+
+.h31 {
+    color: #C75B12;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin-top: 5px;
+}
+
+/* 6. MOBILE RESPONSIVENESS */
+@media screen and (max-width: 480px) {
+    .first {
+        padding: 30px 20px;
+    }
+
+    .Log {
+        font-size: 26px;
+    }
+
+    .quest .logo1 img {
+        width: 150px;
+    }
+}

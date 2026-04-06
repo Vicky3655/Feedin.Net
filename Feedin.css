@@ -1,0 +1,148 @@
+/* 1. GLOBAL RESET & BODY */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("Welcome.jpg");
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+}
+
+/* 2. NAVIGATION - Responsive Flexbox */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    flex-wrap: wrap; /* Allows items to wrap on small screens */
+    min-height: 100px;
+}
+
+.logo img {
+    height: auto;
+    width: 120px; /* Scaled down slightly for better fit */
+    transition: width 0.3s ease;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /* Reduced from 100px for better spacing */
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-family: "Kablammo", system-ui;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #D88A2D;
+}
+
+/* 3. BUTTON STYLING */
+.btn {
+    background-color: #D88A2D;
+    border: 2px solid white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn .butt {
+    text-decoration: none;
+    font-family: "Caveat Brush", cursive;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+.btn:hover .butt {
+    color: #C75B12;
+}
+
+/* 4. HERO TEXT CONTENT */
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+h1 {
+    font-size: clamp(30px, 8vw, 60px); /* Adjusts size based on screen width */
+    text-align: center;
+    margin-top: 95px;
+    flex-wrap: nowrap;
+}
+
+.span {
+    color: #D88A2D;
+     font-family: "Kablammo", system-ui;
+}
+
+section p {
+    font-size: clamp(18px, 4vw, 24px);
+    text-align: center;
+    margin-top: 20px;
+}
+
+section h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-family: "Caveat Brush", cursive;
+    font-size: clamp(20px, 5vw, 35px);
+}
+
+/* 5. MOBILE MEDIA QUERY (Screens 768px and smaller) */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack Logo, Links, and Button */
+        height: auto;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .links {
+        gap: 30px;
+        flex-wrap: wrap; /* Wraps links if the screen is very narrow */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .links a {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn {
+        margin-right: 0; /* Centers the button on mobile */
+    }
+
+    h1 {
+        margin-top: 50px;
+    }
+}
