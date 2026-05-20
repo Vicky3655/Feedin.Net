@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedin — Login</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+  <!-- Site Header / Logo -->
+  <header class="site-header">
+    <img src="ChatGPT Image Feb 16, 2026, 01_21_09 PM.png" alt="Feedin Logo"
+         onerror="this.style.display='none'; document.getElementById('brand').style.display='block'">
+    <div id="brand" class="brand-fallback">Feedin</div>
+  </header>
+
+  <div class="card">
+    <h1 class="page-title">Welcome Back</h1>
+    <p class="page-subtitle">Sign in to your Feedin account</p>
+
+    <form id="login-form" novalidate>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrap">
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="input-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </span>
+        </div>
+        <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <div class="label-row">
+          <label for="password">Password</label>
+          <a href="forgot-password.html" class="forgot-link">Forgot password?</a>
+        </div>
+        <div class="input-wrap">
+          <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+          <span class="input-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18 8h-1V6A5 5 0 0 0 7 6v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm3-9H9V6a3 3 0 0 1 6 0v2z"/>
+            </svg>
+          </span>
+          <button type="button" class="eye-toggle" id="toggle-pw" aria-label="Toggle password">
+            <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+            </svg>
+          </button>
+        </div>
+        <span class="error-msg" id="pass-error">Password is required.</span>
+      </div>
+
+      <!-- Remember -->
+      <div class="checkbox-wrap">
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Keep me signed in</label>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn-primary" id="submit-btn">
+        <span class="btn-text">Sign In</span>
+        <div class="spinner"></div>
+      </button>
+
+    </form>
+
+    <p class="footer-text">Don't have an account? <a href="register.html">Register for free</a></p>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const eyeOpen   = `<path d="M12 5C7 5 2.73 8.11 1 12c1.73 3.89 6 7 11 7s9.27-3.11 11-7c-1.73-3.89-6-7-11-7zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>`;
+    const eyeClosed = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-5 0-9.27-3.11-11-7a10.08 10.08 0 0 1 2.26-3.47M9.9 4.24A9.12 9.12 0 0 1 12 4c5 0 9.27 3.11 11 7a10.12 10.12 0 0 1-1.67 2.68M1 1l22 22M6.34 6.34A7 7 0 0 0 12 19a7 7 0 0 0 5.66-12.66"/>`;
+
+    document.getElementById('toggle-pw').addEventListener('click', () => {
+      const inp = document.getElementById('password');
+      inp.type = inp.type === 'password' ? 'text' : 'password';
+      document.getElementById('eye-icon').innerHTML = inp.type === 'text' ? eyeClosed : eyeOpen;
+    });
+
+    function showToast(msg, type = '') {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.className = 'toast ' + type; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3200);
+    }
+
+    function markError(id, errId, msg) {
+      document.getElementById(id).classList.add('invalid');
+      document.getElementById(id).classList.remove('valid');
+      const e = document.getElementById(errId);
+      e.textContent = msg; e.classList.add('visible');
+    }
+
+    function markValid(id, errId) {
+      document.getElementById(id).classList.remove('invalid');
+      document.getElementById(id).classList.add('valid');
+      document.getElementById(errId).classList.remove('visible');
+    }
+
+    document.getElementById('email').addEventListener('blur', function() {
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value)
+        ? markValid('email','email-error')
+        : markError('email','email-error','Please enter a valid email address.');
+    });
+
+    document.getElementById('password').addEventListener('blur', function() {
+      this.value ? markValid('password','pass-error') : markError('password','pass-error','Password is required.');
+    });
+
+    document.getElementById('login-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const pw    = document.getElementById('password').value;
+      let ok = true;
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { markError('email','email-error','Please enter a valid email address.'); ok = false; }
+      else markValid('email','email-error');
+
+      if (!pw) { markError('password','pass-error','Password is required.'); ok = false; }
+      else markValid('password','pass-error');
+
+      if (!ok) return;
+
+      const btn = document.getElementById('submit-btn');
+      btn.classList.add('loading');
+      await new Promise(r => setTimeout(r, 1600));
+      btn.classList.remove('loading');
+      showToast('✓ Login successful! Redirecting…', 'success');
+    });
+  </script>
+</body>
+</html>
