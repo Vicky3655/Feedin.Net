@@ -3,44 +3,40 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedin.net</title>
+    <title>Welcome to Feedin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Kablammo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Feedin.css">
-
 </head>
 <body>
-   <header>
-    <nav>
-      <div class="logo"><img src="ChatGPT Image Feb 16, 2026, 01_21_09 PM.png" alt="Logo"></div>
-        <div class="links">
-         <a href="Feedin.html" class="active">HOME</a>
-         <a href="menu.html">MENU</a>
-         <a href="about.html">ABOUT</a>
-         <a href="gallery.html">GALLERY</a>
-         <a href="https://wa.link/175p5r">CONTACT</a>
-       </div>
-       
-       <!-- Interlinked Cart Count Button -->
-       <button class="btn" onclick="location.href='menu.html'"><a class="butt" href="menu.html">VIEW MENU (🛒 <span class="cart-count">0</span>)</a></button>
-    </nav>
-</header>
+    <header>
+        <nav>
+          <div class="logo"><img src="ChatGPT Image Feb 16, 2026, 01_21_09 PM.png" alt="Logo"></div>
+            <div class="links">
+             <a href="Feedin.html" class="active">HOME</a>
+             <a href="menu.html">MENU</a>
+             <a href="about.html">ABOUT</a>
+             <a href="gallery.html">GALLERY</a>
+             <a href="https://wa.link/175p5r">CONTACT</a>
+           </div>
+           <!-- Updated to route to the interactive menu page -->
+           <button class="btn"><a class="butt" href="menu.html">ORDER NOW</a></button>
+        </nav>
+    </header>
 
-<script>
-    // Sync cart badge count across other pages
-    function syncCartBadge() {
-        const cart = JSON.parse(localStorage.getItem('restaurant_cart')) || [];
-        const count = cart.reduce((total, item) => total + item.quantity, 0);
-        document.querySelectorAll('.cart-count').forEach(elem => elem.textContent = count);
-    }
-    window.addEventListener('DOMContentLoaded', syncCartBadge);
-</script>
-
-    <h1>Welcome to  <span class="span">Feedin Restaurant</span></h1>
+    <h1>Welcome to <span class="span">Feedin Restaurant</span></h1>
     <section>
         <p>Where Every Meal Feels Like Home</p>
-        <h2>Step into a world of rich flavors, vibrant spices, and unforgettable dining experiences.<br> At <span class="span">Feedin Resturant</span>, we celebrate the heart of African cuisine — from perfectly seasoned jollof rice to golden fried plantains, tender grilled meats, and fresh traditional soups prepared with love.<br></h2>
+        <h2>Step into a world of rich flavors, vibrant spices, and unforgettable dining experiences.<br> At <span class="span">Feedin Restaurant</span>, we celebrate the heart of African cuisine — from perfectly seasoned jollof rice to golden fried plantains, tender grilled meats, and fresh traditional soups prepared with love.<br></h2>
+        
+        <!-- New Call-to-Action Button to route directly to the interactive menu page -->
+        <div class="hero-cta-container">
+            <button class="btn-hero" onclick="location.href='menu.html'">
+                Explore Menu & Order Now
+            </button>
+        </div>
+
         <h2 class="quote">Come hungry. Leave happy.</h2>
     </section>
 </body>
