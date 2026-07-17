@@ -23,13 +23,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
-    flex-wrap: wrap; /* Allows items to wrap on small screens */
+    flex-wrap: wrap; 
     min-height: 100px;
 }
 
 .logo img {
     height: auto;
-    width: 120px; /* Scaled down slightly for better fit */
+    width: 120px; 
     transition: width 0.3s ease;
 }
 
@@ -37,7 +37,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px; /* Reduced from 100px for better spacing */
+    gap: 100px; 
 }
 
 .links a {
@@ -49,7 +49,7 @@ nav {
     transition: color 0.3s;
 }
 
-.links a:hover {
+.links a:hover, .links a.active {
     color: #D88A2D;
 }
 
@@ -89,7 +89,7 @@ section {
     margin-top: 100px;
 }
 h1 {
-    font-size: clamp(30px, 8vw, 60px); /* Adjusts size based on screen width */
+    font-size: clamp(30px, 8vw, 60px); 
     text-align: center;
     margin-top: 95px;
     flex-wrap: nowrap;
@@ -113,10 +113,43 @@ section h2 {
     font-size: clamp(20px, 5vw, 35px);
 }
 
-/* 5. MOBILE MEDIA QUERY (Screens 768px and smaller) */
+/* 5. NEW HERO CALL-TO-ACTION DESIGN (Interactive elements added) */
+.hero-cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.btn-hero {
+    background-color: #D88A2D;
+    color: white;
+    border: 2px solid white;
+    padding: 15px 45px;
+    font-family: "Caveat Brush", cursive;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-hero:hover {
+    background-color: white;
+    color: #C75B12;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-hero:active {
+    transform: translateY(-1px);
+}
+
+/* 6. MOBILE MEDIA QUERY (Screens 768px and smaller) */
 @media screen and (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack Logo, Links, and Button */
+        flex-direction: column; 
         height: auto;
         gap: 20px;
         padding: 20px 0;
@@ -124,7 +157,7 @@ section h2 {
 
     .links {
         gap: 30px;
-        flex-wrap: wrap; /* Wraps links if the screen is very narrow */
+        flex-wrap: wrap; 
         justify-content: center;
         width: 100%;
     }
@@ -139,10 +172,15 @@ section h2 {
     }
 
     .btn {
-        margin-right: 0; /* Centers the button on mobile */
+        margin-right: 0; 
     }
 
     h1 {
         margin-top: 50px;
+    }
+
+    .btn-hero {
+        padding: 12px 35px;
+        font-size: 20px;
     }
 }
