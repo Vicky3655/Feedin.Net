@@ -3,146 +3,389 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedin.net</title>
+    <title>Menu - Feedin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Kablammo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="menu.css">
-
 </head>
 <body>
     <header>
         <nav>
-          <div class="logo"><img src = "ChatGPT Image Feb 16, 2026, 01_21_09 PM.png" alt="Logo"></div>
+          <div class="logo"><img src="ChatGPT Image Feb 16, 2026, 01_21_09 PM.png" alt="Logo"></div>
             <div class="links">
              <a href="Feedin.html">HOME</a>
-             <a href="menu.html">MENU</a>
+             <a href="menu.html" class="active">MENU</a>
              <a href="about.html">ABOUT</a>
              <a href="gallery.html">GALLERY</a>
              <a href="https://wa.link/175p5r">CONTACT</a>
            </div>
-        
+           <!-- Header Cart Button -->
+           <button class="cart-nav-btn" onclick="toggleCart()">
+                🛒 Cart (<span class="cart-count">0</span>)
+           </button>
         </nav>
     </header>
     
     <div class="one">
-    <container class="container1">
-        <img src="image 12.png" alt="img 12">
-        <h1>Vegetables Based Soup</h1>
-        <li>Egusi Soup</li>
-        <li>Vegetable Soup</li>
-        <li>Okra Soup</li>
-        <li>Edikaikong Soup</li>
-        <li>Ofe Akwu Soup</li>
-    </container>
+        <!-- Category 1 -->
+        <div class="container1">
+            <img src="image 12.png" alt="Vegetables Based Soup">
+            <h1>Vegetable Based Soups</h1>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="item-name">Egusi Soup</span>
+                    <span class="item-price">₦4,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Egusi Soup', 4500)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Vegetable Soup</span>
+                    <span class="item-price">₦4,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Vegetable Soup', 4000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Okra Soup</span>
+                    <span class="item-price">₦3,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Okra Soup', 3500)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Edikaikong Soup</span>
+                    <span class="item-price">₦5,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Edikaikong Soup', 5000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Ofe Akwu Soup</span>
+                    <span class="item-price">₦4,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Ofe Akwu Soup', 4500)">Add</button>
+                </li>
+            </ul>
+        </div>
 
-    <container class="container1">
-        <img src="image 8.png" alt="img 8">
-        <h1>Pepper and Native Soups</h1>
-        <li>Ofe Nsala Soup</li>
-        <li>Banga Soup</li>
-        <li>Pepper Soup(Goat, Catfish, Chicken, Turkey)</li>
-    </container>
+        <!-- Category 2 -->
+        <div class="container1">
+            <img src="image 8.png" alt="Pepper and Native Soups">
+            <h1>Pepper & Native Soups</h1>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="item-name">Ofe Nsala Soup</span>
+                    <span class="item-price">₦5,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Ofe Nsala Soup', 5000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Banga Soup</span>
+                    <span class="item-price">₦4,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Banga Soup', 4500)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Goat Meat Pepper Soup</span>
+                    <span class="item-price">₦4,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Goat Meat Pepper Soup', 4000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Catfish Pepper Soup</span>
+                    <span class="item-price">₦4,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Catfish Pepper Soup', 4500)">Add</button>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="one">
-    <container class="container2">
-        <img src="image 6.png" alt="img 6">
-        <h1>Seafoood and Meat Rich Soups </h1>
-        <li>Fisherman Soup</li>
-        <li>Goat meat Soup</li>
-        <li>Chicken Soup</li>
-        <li>Turkey Soup</li>
-    </container>
+        <!-- Category 3 -->
+        <div class="container2">
+            <img src="image 6.png" alt="Seafood and Meat Rich Soups">
+            <h1>Meat Rich Soups</h1>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="item-name">Fisherman Soup</span>
+                    <span class="item-price">₦6,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Fisherman Soup', 6000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Chicken Pepper Soup</span>
+                    <span class="item-price">₦4,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Chicken Pepper Soup', 4000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Turkey Pepper Soup</span>
+                    <span class="item-price">₦4,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Turkey Pepper Soup', 4500)">Add</button>
+                </li>
+            </ul>
+        </div>
 
-    <container class="container2">
-        <img src="Welcome.jpg" alt="img 0">
-        <h1>Swallow Options</h1>
-        <li>Pounded yam</li>
-        <li>Amala</li>
-        <li>Wheat</li>
-        <li>Fufu</li>
-        <li>Semovita</li>
-    </container>
+        <!-- Category 4 -->
+        <div class="container2">
+            <img src="Welcome.jpg" alt="Swallow Options">
+            <h1>Swallow Options</h1>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="item-name">Pounded Yam</span>
+                    <span class="item-price">₦1,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pounded Yam', 1000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Amala</span>
+                    <span class="item-price">₦800</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Amala', 800)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Wheat</span>
+                    <span class="item-price">₦800</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Wheat', 800)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Fufu</span>
+                    <span class="item-price">₦600</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Fufu', 600)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Semovita</span>
+                    <span class="item-price">₦800</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Semovita', 800)">Add</button>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="one">
-    <container class="container3">
-        <img src="image 4.png" alt="img 4">
-        <h1>Rice and Pasta</h1>
-        <li>Jollof Rice</li>
-        <li>Fried Rice</li>
-        <li>White Rice</li>
-        <li>Spaghetti</li>
-    </container>
+        <!-- Category 5 -->
+        <div class="container3">
+            <img src="image 4.png" alt="Rice and Pasta">
+            <h1>Rice & Pasta</h1>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="item-name">Jollof Rice</span>
+                    <span class="item-price">₦2,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Jollof Rice', 2500)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Fried Rice</span>
+                    <span class="item-price">₦2,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Fried Rice', 2500)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">White Rice</span>
+                    <span class="item-price">₦1,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('White Rice', 1500)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Spaghetti</span>
+                    <span class="item-price">₦2,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Spaghetti', 2000)">Add</button>
+                </li>
+            </ul>
+        </div>
 
-    <container class="container3">
-        <img src="Property 1=Variant4.png" alt="img 10">
-        <h1>Snacks and Sides</h1>
-        <li>Fried Plantain</li>
-        <li>Moi Moi</li>
-        <li>Akara</li>
-        <li>Salad</li>
-    </container>
+        <!-- Category 6 -->
+        <div class="container3">
+            <img src="Property 1=Variant4.png" alt="Snacks and Sides">
+            <h1>Snacks & Sides</h1>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="item-name">Fried Plantain</span>
+                    <span class="item-price">₦1,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Fried Plantain', 1000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Moi Moi</span>
+                    <span class="item-price">₦1,200</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Moi Moi', 1200)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Akara</span>
+                    <span class="item-price">₦800</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Akara', 800)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Salad</span>
+                    <span class="item-price">₦1,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Salad', 1500)">Add</button>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="one">
-    <container class="container4">
-        <img src="glass-red-drink-with-mint-leaves-pipe (2).jpg" alt="img 5">
-        <h1>Drinks</h1>
-        <li>Zobo</li>
-        <li>Chapman</li>
-        <li>Kunu</li>
-        <li>Fruit Juice</li>
-    </container>
+        <!-- Category 7 -->
+        <div class="container4">
+            <img src="glass-red-drink-with-mint-leaves-pipe.jpg" alt="Drinks">
+            <h1>Drinks</h1>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="item-name">Zobo</span>
+                    <span class="item-price">₦800</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Zobo', 800)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Chapman</span>
+                    <span class="item-price">₦1,500</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Chapman', 1500)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Kunu</span>
+                    <span class="item-price">₦1,000</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Kunu', 1000)">Add</button>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Fruit Juice</span>
+                    <span class="item-price">₦1,200</span>
+                    <button class="add-to-cart-btn" onclick="addToCart('Fruit Juice', 1200)">Add</button>
+                </li>
+            </ul>
+        </div>
     </div>
 
-<footer class="footer">
-  <div class="footer-container">
-
-
-    <div class="footer-brand">
-      <h2>Feedin</h2>
-      <p>Authentic Flavor. Every Bite.</p>
+    <!-- Interactive Cart Sidebar UI Component -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Order</h2>
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items-container" class="cart-items-container">
+            <!-- Dynamically populated via Javascript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <span>Total:</span>
+                <span id="cart-total-price">₦0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkoutOrder()">Place Order via WhatsApp</button>
+        </div>
     </div>
 
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="Feedin.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
-    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3>Feedin</h3>
+          <p>Authentic Flavor. Every Bite.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="Feedin.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h3>Contact</h3>
+          <p> Lagos, Nigeria</p>
+          <p>+234 800 000 0000</p>
+          <p> info@feedin.com</p>
+        </div>
+        <div class="hours">
+          <h3>Opening Hours</h3>
+          <p>Mon - Fri: 10am - 10pm</p>
+          <p>Sat - Sun: 12pm - 11pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Feedin. All Rights Reserved.</p>
+      </div>
+    </footer>
 
-    
-    <div class="contact">
-      <h3>Contact</h3>
-      <p> Lagos, Nigeria</p>
-      <p>+234 800 000 0000</p>
-      <p> info@feedin.com</p>
-    </div>
+    <!-- Interactive Cart Logic -->
+    <script>
+        let cart = JSON.parse(localStorage.getItem('restaurant_cart')) || [];
 
+        function saveCart() {
+            localStorage.setItem('restaurant_cart', JSON.stringify(cart));
+            updateCartUI();
+        }
 
-    <div class="hours">
-      <h3>Opening Hours</h3>
-      <p>Mon - Fri: 10am - 10pm</p>
-      <p>Sat - Sun: 12pm - 11pm</p>
-    </div>
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            saveCart();
+            // Optional: Automatically open cart sidebar when adding an item
+            document.getElementById('cart-sidebar').classList.add('open');
+        }
 
-  </div>
+        function updateQuantity(name, amount) {
+            const item = cart.find(item => item.name === name);
+            if (item) {
+                item.quantity += amount;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.name !== name);
+                }
+            }
+            saveCart();
+        }
 
-  <div class="footer-bottom">
-    <p>&copy; 2026 Feedin. All Rights Reserved.</p>
-  </div>
-</footer>
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            sidebar.classList.toggle('open');
+        }
 
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const totalCountElems = document.querySelectorAll('.cart-count');
+            const totalPriceElem = document.getElementById('cart-total-price');
+            
+            container.innerHTML = '';
+            let totalPrice = 0;
+            let totalItems = 0;
 
+            cart.forEach(item => {
+                totalPrice += item.price * item.quantity;
+                totalItems += item.quantity;
 
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.className = 'cart-item';
+                cartItemDiv.innerHTML = `
+                    <div class="cart-item-details">
+                        <span class="cart-item-name">${item.name}</span>
+                        <span class="cart-item-price">₦${(item.price * item.quantity).toLocaleString()}</span>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button onclick="updateQuantity('${item.name}', -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity('${item.name}', 1)">+</button>
+                    </div>
+                `;
+                container.appendChild(cartItemDiv);
+            });
 
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="empty-message">Your cart is empty.</p>`;
+            }
 
+            totalCountElems.forEach(elem => elem.textContent = totalItems);
+            totalPriceElem.textContent = `₦${totalPrice.toLocaleString()}`;
+        }
 
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Add some food first!");
+                return;
+            }
+
+            let message = "Hello Feedin! I'd like to place an order:\n\n";
+            let total = 0;
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                message += `• ${item.quantity}x ${item.name} - ₦${subtotal.toLocaleString()}\n`;
+                total += subtotal;
+            });
+            message += `\nTotal: ₦${total.toLocaleString()}`;
+            
+            // Encode WhatsApp string and redirect
+            const encodedText = encodeURIComponent(message);
+            window.open(`https://wa.me/2348000000000?text=${encodedText}`, '_blank');
+        }
+
+        // Initialize UI on load
+        window.onload = function() {
+            updateCartUI();
+        }
+    </script>
 </body>
+</html>
     
     
